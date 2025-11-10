@@ -1,48 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 
-export default function CustomCursor() {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [cursorSize, setCursorSize] = useState(32); // Default size
-
+const CursorAnimation = () => {
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
+    const cursor = document.createElement("div");
+    cursor.style.position = "fixed";
+    cursor.style.width = "22px";
+    cursor.style.height = "22px";
+    cursor.style.borderRadius = "50%";
+    cursor.style.background = "rgba(0,255,255,0.8)";
+    cursor.style.boxShadow = "0 0 25px rgba(0,255,255,0.6)";
+    cursor.style.pointerEvents = "none";
+    cursor.style.zIndex = "99999";
+    cursor.style.transition = "transform 0.12s ease-out";
+    document.body.appendChild(cursor);
+
+    const handleMove = (e) => {
+      cursor.style.transform = `translate(${e.clientX - 11}px, ${e.clientY - 11}px)`;
     };
 
-    const handleMouseOverText = () => {
-      setCursorSize(80); // Increase cursor size when hovering over text
+    const handleHover = () => {
+      cursor.style.transform += " scale(1.5)";
+      cursor.style.background = "rgba(255,0,128,0.9)";
+      cursor.style.boxShadow = "0 0 35px rgba(255,0,128,0.7)";
     };
 
-    const handleMouseLeaveText = () => {
-      setCursorSize(32); // Reset cursor size when leaving text
+    const handleLeave = () => {
+      cursor.style.background = "rgba(0,255,255,0.8)";
+      cursor.style.boxShadow = "0 0 25px rgba(0,255,255,0.6)";
     };
 
-    // Select all text elements
-    const textElements = document.querySelectorAll("p, h1, h2, h3, h4, h5, h6");
-
-    textElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseOverText);
-      el.addEventListener("mouseleave", handleMouseLeaveText);
+    window.addEventListener("mousemove", handleMove);
+    document.querySelectorAll("a, button, img, svg").forEach((el) => {
+      el.addEventListener("mouseenter", handleHover);
+      el.addEventListener("mouseleave", handleLeave);
     });
 
-    window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
-      textElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseOverText);
-        el.removeEventListener("mouseleave", handleMouseLeaveText);
-      });
-      window.removeEventListener("mousemove", handleMouseMove);
+      cursor.remove();
+      window.removeEventListener("mousemove", handleMove);
     };
   }, []);
 
-  return (
-    <motion.div
-      className="fixed bg-white rounded-full pointer-events-none mix-blend-difference z-50"
-      style={{ width: cursorSize, height: cursorSize }}
-      animate={{ x: cursorPosition.x - cursorSize / 2, y: cursorPosition.y - cursorSize / 2 }}
-      transition={{ type: "spring", stiffness: 200, damping: 20 }}
-    />
-  );
-}
+  return null;
+};
+
+export default CursorAnimation;

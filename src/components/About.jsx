@@ -25,17 +25,23 @@ export default function About() {
           About <span className="font-extrabold">Me</span>
         </h2>
 
-        <p className="text-[#71717A] text-sm/6 lg:text-base mt-5 lg:mt-10">
-          I'm a passionate full-stack developer specializing in **React.js & Node.js**. I thrive on blending technical expertise with sleek UI/UX design to build high-performing, user-friendly applications.
-        </p>
+       <p className="text-[#71717A] text-sm/6 lg:text-base mt-5 lg:mt-10">
+  I'm a passionate <b>Cybersecurity Enthusiast</b> and <b>Mod + Bypass Developer</b> who loves exploring the deeper side of technology. 
+  I specialize in creating secure systems, customizing digital environments, and experimenting with innovative tools and techniques.
+</p>
 
-        <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">
-          My web development journey started in **2015**, and since then, I've continuously evolved, taking on new challenges and keeping up with the latest technologies. Today, I build **cutting-edge web applications** using **Next.js, TypeScript, NestJS, TailwindCSS, Supabase, and more**.
-        </p>
+<p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">
+  My journey started with a curiosity for how systems work — from software to networks — 
+  which evolved into a passion for <b>ethical hacking</b>, <b>game modding</b>, and <b>security-based development</b>. 
+  I focus on learning continuously, improving my craft, and exploring new challenges in the cyber world.
+</p>
 
-        <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">
-          Beyond coding, I enjoy sharing insights on **Twitter**, engaging with **Indie Hackers**, and following the journey of **early-stage startups**. Feel free to follow me on **Twitter** or check out my projects on **GitHub**.
-        </p>
+<p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">
+  Apart from coding, I enjoy connecting with like-minded creators, experimenting with new tools, 
+  and staying up-to-date with the latest in cybersecurity and innovation. 
+  My goal is to turn creativity and logic into meaningful, secure, and high-impact digital experiences.
+</p>
+
       </motion.div>
     </div>
   );

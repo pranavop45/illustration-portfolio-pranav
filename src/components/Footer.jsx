@@ -7,7 +7,7 @@ export default function Footer() {
 
       <div className='text-white lg:font-semibold lg:text-sm font-normal text-[10px] text-right lg:space-y-3'>
         <p>@ 2025 Personal Portfolio</p>
-        <p>Made by -SK</p>
+        <p>Made by Pranav</p>
       </div>
     </div>
   )

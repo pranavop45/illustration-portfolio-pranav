@@ -5,17 +5,19 @@ import { motion } from 'framer-motion';
 const projects = [
   {
     id: 1,
-    title: "Crypto Screener Application",
-    description: "A powerful tool for tracking and analyzing cryptocurrency trends in real-time.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "College Management System",
+    description:
+      "A complete web-based solution for managing student records, attendance, and faculty data. Developed with a modern tech stack and role-based access for admin, staff, and students.",
+    images: ["/assets/cms-1.png", "/assets/cms-2.png"],
+    link: "https://github.com/pranavop45/College-Management-System"
   },
   {
     id: 2,
-    title: "Stock Market Dashboard",
-    description: "An interactive dashboard to monitor stock prices and market trends efficiently.",
-    image: "/assets/project1.png",
-    link: "#"
+    title: "AI Powered Portfolio",
+    description:
+      "An advanced personal portfolio with an integrated AI Assistant, real-time APIs, and 3D UI animations — enabling dynamic interactions and smart responses.",
+    images: ["/assets/portfolio-1.png", "/assets/portfolio-2.png"],
+    link: "https://github.com/pranavop45/portfolio-ai-assistance"
   }
 ];
 
@@ -26,36 +28,61 @@ export default function Projects() {
         My <span className="font-extrabold">Projects</span>
       </h2>
 
-      <div className="lg:mt-16 mt-8 lg:space-y-16 space-y-8 lg:pb-6 pb-3">
+      <div className="lg:mt-16 mt-8 lg:space-y-24 space-y-14 lg:pb-6 pb-3">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            className={`flex justify-between items-center flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+            className={`flex flex-col lg:flex-row items-start gap-12 ${
+              index % 2 === 0 ? "" : "lg:flex-row-reverse"
+            }`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 80, damping: 10, delay: index * 0.2 }}
+            transition={{
+              type: "spring",
+              stiffness: 80,
+              damping: 10,
+              delay: index * 0.15
+            }}
             viewport={{ once: true }}
           >
-            <div className="lg:w-[500px] w-full rounded-2xl overflow-hidden">
+            {/* Top Image */}
+            <div className="lg:w-1/2 w-full flex flex-col gap-6">
               <img
-                className="w-full h-full hover:scale-105 transition-all duration-500 cursor-pointer object-cover"
-                src={project.image}
-                alt={project.title}
+                src={project.images[0]}
+                alt={`${project.title} preview`}
+                className="w-full rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] object-cover"
               />
             </div>
 
-            <div className="lg:w-1/2 lg:space-y-6 space-y-4">
-              <h2 className="font-extrabold text-white mt-5 lg:mt-0 text-3xl lg:text-5xl">
+            {/* Text Section */}
+            <div className="lg:w-1/2 w-full flex flex-col justify-center lg:pl-10">
+              <h2 className="font-extrabold text-white text-3xl lg:text-5xl mb-2">
                 {String(project.id).padStart(2, "0")}
               </h2>
-              <p className="font-bold text-white text-xl lg:text-3xl">{project.title}</p>
-
-              <p className="font-light text-sm/6 lg:text-base text-[#71717A]">
+              <p className="font-bold text-white text-xl lg:text-3xl mb-4">
+                {project.title}
+              </p>
+              <p className="font-light text-sm/6 lg:text-base text-[#A1A1AA] leading-relaxed mb-4">
                 {project.description}
               </p>
-              <a href={project.link} className="text-white mt-3 block" target="_blank" rel="noopener noreferrer">
-                <TbExternalLink size={23} />
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white hover:text-[#00FF88] transition-colors"
+              >
+                <TbExternalLink size={20} />
+                View Project
               </a>
+
+              {/* Second image — below View Project */}
+              <div className="mt-6">
+                <img
+                  src={project.images[1]}
+                  alt={`${project.title} extra`}
+                  className="w-full rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.5)] object-cover"
+                />
+              </div>
             </div>
           </motion.div>
         ))}
