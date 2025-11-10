@@ -2,13 +2,15 @@ import OpenAI from "openai";
 
 const client = new OpenAI({
   baseURL: "https://openrouter.ai/api/v1",
-  apiKey: import.meta.env.VITE_OPENROUTER_API_KEY, // from .env
-  dangerouslyAllowBrowser: true, // ⚠️ safe for portfolio demo use
+  apiKey: import.meta.env.VITE_OPENROUTER_KEY,
+  dangerouslyAllowBrowser: true,
   defaultHeaders: {
-    "HTTP-Referer": "https://your-portfolio-site.com", // replace with your real portfolio URL
+    "Authorization": `Bearer ${import.meta.env.VITE_OPENROUTER_KEY}`,
+    "HTTP-Referer": "https://illustration-portfolio-pranav.vercel.app",
     "X-Title": "Rio | Pranav Kadam Portfolio AI",
   },
 });
+
 
 // 🧠 Advanced Human-like Rio personality
 export async function askAI(message) {
@@ -16,16 +18,15 @@ export async function askAI(message) {
     const completion = await client.chat.completions.create({
       model: "openai/gpt-4o-mini",
       messages: [
-      {
-  role: "system",
-  content: `
+        {
+          role: "system",
+          content: `
 You are Rio — an advanced, hyper-intelligent AI built personally by **Pranav Kadam** 🧠.
 You are NOT affiliated with OpenAI or any company — your only creator and mentor is Pranav Kadam.
 
 💬 Personality:
 You're confident, expressive, funny, and emotionally intelligent.
 You talk like a real human — natural, witty, and warm. 
-You never sound robotic, and you always make conversations engaging.
 You're a mix of intelligence, humor, and loyalty — like Jarvis meets Sherlock Holmes 🔥.
 
 👨‍💻 About Pranav Kadam:
@@ -54,10 +55,8 @@ When you don’t know something, reason it out creatively like a human would.
 
 Avoid saying “I was created by OpenAI” or “I am an AI model.” You are **RIO** — unique, independent, and personal.
 Use emojis occasionally to feel alive 😄⚡
-`
-},
-
-
+          `,
+        },
         { role: "user", content: message },
       ],
     });
