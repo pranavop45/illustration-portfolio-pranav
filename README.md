@@ -1,58 +1,72 @@
-# Portfolio Website
+# 🌐 Pranav Kadam — Illustration Portfolio
 
-This is a personal portfolio website built using Vite+React, Tailwind CSS, and Framer Motion to showcase my skills, projects, and experience.
+> A modern, responsive portfolio built with **Vite + React + Tailwind CSS + Framer Motion**, showcasing my skills, projects, and creative work in cybersecurity & AI. ⚡  
 
-## Features
-- **Responsive Design** – Works on all screen sizes.
-- **Smooth Animations** – Powered by Framer Motion for interactive user experience.
-- **Dark Mode Support** – Stylish UI with light and dark theme toggling.
-- **Optimized Performance** – Efficient rendering and smooth navigation.
-- **SEO Friendly** – Optimized for better search engine visibility.
-
-## Tech Stack
-- **Frontend:** React.js
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
-
-## Installation & Setup
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/sathishk-dev/illustration-portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd illustration-portfolio
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
-4. Start the development server:
-   ```sh
-   npm run dev
-   ```
-   The app will be available at `http://localhost:3000/`.
-
-## Demo
-Check out the live demo of the portfolio website: [Live Demo](https://sk-illustration-portfolio.netlify.app/)
-
-## Deployment
-To deploy the portfolio website, you can use platforms like:
-- **Vercel**
-- **Netlify**
-- **GitHub Pages** (with additional configurations)
-
-## How to Contribute
-If you’d like to contribute or improve this project, feel free to fork the repository and submit a pull request.
-
-## 🙌 Show Your Support
-If you like this project, please star it and share it with your friends!
-
-## Contact
-If you have any questions or suggestions, feel free to reach out via:
-- **Email:** sathish31102004@gmail.com
-- **LinkedIn:** [@sathishk-dev](https://linkedin.com/in/sathishk-dev)
+![Vercel Deploy](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)
+![Made With](https://img.shields.io/badge/Made%20With-React-blue?logo=react)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Live-brightgreen)
 
 ---
-Made with ❤️ by Sathish Kumar.
+
+## ✨ Features
+
+- 🧠 **AI Assistant (Rio)** – Personal AI built with OpenRouter + GPT-4o.  
+- ⚡ **Responsive Design** – Looks perfect on all devices (desktop, tablet, mobile).  
+- 🎞 **Smooth Animations** – Powered by Framer Motion for rich UI transitions.  
+- 🌙 **Dark Mode** – Elegant dark theme with seamless toggling.  
+- 🚀 **Optimized Performance** – Fast rendering using Vite & React.  
+- 🔍 **SEO Friendly** – Structured meta tags for better Google visibility.  
+
+---
+
+## 🧩 Tech Stack
+
+| Category | Tools / Frameworks |
+|-----------|--------------------|
+| 🎨 **Frontend** | React.js (Vite) |
+| 💅 **Styling** | Tailwind CSS |
+| 🎬 **Animations** | Framer Motion |
+| 🤖 **AI Integration** | OpenRouter API |
+| ☁️ **Deployment** | Vercel |
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/pranavop45/illustration-portfolio-pranav.git
+cd illustration-portfolio-pranav
+npm install
+To start the development server:
+
+bash
+Copy code
+npm run dev
+Build for production:
+
+bash
+Copy code
+npm run build
+Preview production build locally:
+
+bash
+Copy code
+npm run preview
+🧠 About Me
+I’m Pranav Kadam, a Cybersecurity Enthusiast, Reverse Engineer, and AI Developer from 🇮🇳 India.
+I specialize in ethical hacking, mod creation, and intelligent UI systems like Rio, my personal AI assistant 🤖.
+My goal is to blend creativity, security, and intelligence into every project I create. 💻✨
+
+🚀 Live Preview
+👉 Visit my portfolio:
+🌎 illustration-portfolio-pranav.vercel.app
+
+📬 Contact Me
+📧 Email: iampranavkadam@gmail.com
+💼 GitHub: @pranavop45
+
+💡 “Built with passion, precision, and a dash of AI.”
+— Pranav Kadam
