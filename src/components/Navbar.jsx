@@ -38,22 +38,17 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* 👇 Logo */}
-        <motion.img
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => scrollToSection("home")}
-          src="/assets/pk-black.png"
-          alt="Pranav Logo"
-          className="cursor-pointer"
-          style={{
-            width: "120px",
-            height: "auto",
-            objectFit: "contain",
-            transition: "all 0.3s ease",
-            marginLeft: "-100px",
-            marginTop: "-10px",
-          }}
-        />
+<motion.img
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+  onClick={() => scrollToSection("home")}
+  src="/assets/pk-black.png"
+  alt="Pranav Logo"
+  className="cursor-pointer object-contain transition-all duration-300 
+             w-20 sm:w-24 md:w-[120px] h-auto 
+             ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
+/>
+
 
         {/* 👇 Desktop Nav Links */}
         <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
