@@ -38,13 +38,13 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* 👇 Logo */}
-<motion.img
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.9 }}
-  onClick={() => scrollToSection("home")}
-  src="/assets/pk-black.png"
-  alt="Pranav Logo"
-  className="cursor-pointer object-contain transition-all duration-300 
+   <motion.img
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={() => scrollToSection("home")}
+    src="/assets/pk-black.png"
+    alt="Pranav Logo"
+     className="cursor-pointer object-contain transition-all duration-300 
              w-20 sm:w-24 md:w-[120px] h-auto 
              ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
 />
