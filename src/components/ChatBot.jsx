@@ -75,7 +75,10 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-white shadow-2xl rounded-2xl w-80 overflow-hidden border border-gray-300"
+            className="bg-white shadow-2xl rounded-2xl border border-gray-300 
+            w-[85vw] sm:w-80 max-w-[320px] 
+            overflow-hidden fixed bottom-6 right-3 sm:static"
+
           >
             {/* Header */}
             <div className="flex items-center justify-between bg-black text-white p-3 font-bold">
