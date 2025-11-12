@@ -20,7 +20,7 @@ export default function ChatBot() {
     }
   }, [isOpen]);
 
-  // ✉️ Send message through OpenRouter AI (frontend only)
+  // ✉️ Send message through OpenRouter AI
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -30,7 +30,7 @@ export default function ChatBot() {
     setLoading(true);
 
     try {
-      const reply = await askAI(input); // ✅ direct frontend AI call
+      const reply = await askAI(input);
       setMessages((prev) => [...prev, { sender: "bot", text: reply }]);
     } catch (err) {
       console.error("Rio Error:", err);
@@ -77,12 +77,9 @@ export default function ChatBot() {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="bg-white shadow-xl rounded-2xl border border-gray-300 
              w-[72vw] sm:w-80 max-w-[270px] 
-             h-[42vh] sm:h-auto 
+             h-[46vh] sm:h-auto 
              overflow-hidden fixed bottom-4 right-3 sm:bottom-6 sm:right-6 
-             z-50"
-
-
-
+             z-50 flex flex-col"
           >
             {/* Header */}
             <div className="flex items-center justify-between bg-black text-white p-3 font-bold">
@@ -102,50 +99,48 @@ export default function ChatBot() {
               </button>
             </div>
 
-            {/* Messages */}
-            <div className="p-2 h-[30vh] sm:h-64 overflow-y-auto space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+            {/* Messages + Input Section */}
+            <div className="flex flex-col justify-between h-full">
+              {/* Messages */}
+              <div className="flex-1 p-2 overflow-y-auto space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+                {messages.map((msg, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-2 rounded-lg ${
+                      msg.sender === "user"
+                        ? "bg-black text-white ml-auto max-w-[80%]"
+                        : "bg-gray-200 text-black mr-auto max-w-[80%]"
+                    }`}
+                  >
+                    {msg.text}
+                  </motion.div>
+                ))}
+                {loading && (
+                  <p className="text-center text-gray-500 italic">
+                    Rio is typing...
+                  </p>
+                )}
+              </div>
 
-              {messages.map((msg, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className={`p-2 rounded-lg ${
-                    msg.sender === "user"
-                      ? "bg-black text-white ml-auto max-w-[80%]"
-                      : "bg-gray-200 text-black mr-auto max-w-[80%]"
-                  }`}
+              {/* Input Bar */}
+              <div className="flex items-center border-t border-gray-300 p-2 bg-white">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+                  placeholder="Ask Rio anything..."
+                  className="flex-1 text-sm p-2 outline-none bg-transparent"
+                />
+                <button
+                  onClick={sendMessage}
+                  className="bg-black text-white px-3 py-2 rounded-lg text-sm font-semibold active:scale-95 transition-transform"
                 >
-                  {msg.text}
-                </motion.div>
-              ))}
-              {loading && (
-                <p className="text-center text-gray-500 italic">
-                  Rio is typing...
-                </p>
-              )}
-            </div>
-
-            {/* Input */}
-            <div className="flex border-t border-gray-300">
-              <input
-                className="flex-1 px-3 py-2 outline-none text-sm"
-                placeholder="Ask Rio anything..."
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              />
-              <button
-                onClick={sendMessage}
-                disabled={loading}
-                className={`px-3 py-2 font-semibold transition ${
-                  loading
-                    ? "bg-gray-500 cursor-not-allowed"
-                    : "bg-black text-white hover:bg-gray-800"
-                }`}
-              >
-                Send
-              </button>
+                  Send
+                </button>
+              </div>
             </div>
           </motion.div>
         )}
