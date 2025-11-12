@@ -152,7 +152,7 @@ export default function Contact() {
               <span className="border-2 transition-all border-transparent group-hover:border-black rounded-full p-[5px]">
                 <FaPhone className="w-3 h-3 lg:w-4 lg:h-4" />
               </span>
-              +91 9309818332
+              CALL MT KR EMAIL KRDE 
             </motion.a>
           </div>
         </motion.div>
