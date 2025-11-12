@@ -75,11 +75,12 @@ export default function ChatBot() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-white shadow-2xl rounded-2xl border border-gray-300 
-            w-[80vw] sm:w-80 max-w-[300px] 
-            h-[60vh] sm:h-auto 
-            overflow-hidden fixed bottom-5 right-3 
-            sm:bottom-6 sm:right-6 z-50"
+            className="bg-white shadow-xl rounded-2xl border border-gray-300
+            w-[75vw] sm:w-80 max-w-[280px]
+            h-[50vh] sm:h-auto
+            overflow-hidden fixed bottom-4 right-3 sm:bottom-6 sm:right-6
+            z-50"
+
 
 
           >
@@ -102,7 +103,8 @@ export default function ChatBot() {
             </div>
 
             {/* Messages */}
-            <div className="p-3 h-64 overflow-y-auto space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+            <div className="p-2 h-[38vh] sm:h-64 overflow-y-auto space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+
               {messages.map((msg, i) => (
                 <motion.div
                   key={i}
