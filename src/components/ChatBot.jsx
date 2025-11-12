@@ -99,44 +99,43 @@ export default function ChatBot() {
               </button>
             </div>
 
-            {/* Messages + Input Section */}
-            <div className="flex flex-col justify-between h-full">
-              {/* Messages */}
-              <div className="flex-1 p-2 overflow-y-auto space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
-                {messages.map((msg, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-2 rounded-lg ${
-                      msg.sender === "user"
-                        ? "bg-black text-white ml-auto max-w-[80%]"
-                        : "bg-gray-200 text-black mr-auto max-w-[80%]"
-                    }`}
-                  >
-                    {msg.text}
-                  </motion.div>
-                ))}
-                {loading && (
-                  <p className="text-center text-gray-500 italic">
-                    Rio is typing...
-                  </p>
-                )}
-              </div>
+           {/* Messages + Input Section */}
+<div className="flex flex-col h-full">
+  {/* Messages Area */}
+  <div className="flex-1 p-2 overflow-y-auto space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+    {messages.map((msg, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        className={`p-2 rounded-lg ${
+          msg.sender === "user"
+            ? "bg-black text-white ml-auto max-w-[80%]"
+            : "bg-gray-200 text-black mr-auto max-w-[80%]"
+        }`}
+      >
+        {msg.text}
+      </motion.div>
+    ))}
+    {loading && (
+      <p className="text-center text-gray-500 italic">Rio is typing...</p>
+    )}
+  </div>
+
 
               {/* Input Bar */}
-              <div className="flex items-center border-t border-gray-300 p-2 bg-white">
-                <input
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                  placeholder="Ask Rio anything..."
-                  className="flex-1 text-sm p-2 outline-none bg-transparent"
+               <div className="flex items-center border-t border-gray-300 p-2 bg-white shrink-0">
+    <input
+      type="text"
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+      onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+      placeholder="Ask Rio anything..."
+      className="flex-1 text-sm p-2 outline-none bg-transparent"
                 />
                 <button
                   onClick={sendMessage}
-                  className="bg-black text-white px-3 py-2 rounded-lg text-sm font-semibold active:scale-95 transition-transform"
+      className="bg-black text-white px-3 py-2 rounded-lg text-sm font-semibold active:scale-95 transition-transform"
                 >
                   Send
                 </button>
