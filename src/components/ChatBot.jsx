@@ -23,10 +23,13 @@ export default function ChatBot() {
 
   // 🔄 Auto-scroll to bottom when new messages appear
   useEffect(() => {
-    if (chatRef.current) {
-      chatRef.current.scrollTop = chatRef.current.scrollHeight;
-    }
-  }, [messages]);
+  if (chatRef.current) {
+    chatRef.current.scrollTo({
+      top: chatRef.current.scrollHeight,
+      behavior: "smooth",
+    });
+  }
+}, [messages, loading]);
 
   // ✉️ Send message to AI
   const sendMessage = async () => {
@@ -110,30 +113,34 @@ export default function ChatBot() {
             {/* 🧠 Messages + Input */}
             <div className="relative flex flex-col h-full overflow-hidden">
               {/* Scrollable messages */}
-              <div
-                ref={chatRef}
-                className="flex-1 overflow-y-auto p-2 space-y-2 text-sm scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
-              >
-                {messages.map((msg, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 5 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-2 rounded-lg ${
-                      msg.sender === "user"
-                        ? "bg-black text-white ml-auto max-w-[80%]"
-                        : "bg-gray-200 text-black mr-auto max-w-[80%]"
-                    }`}
-                  >
-                    {msg.text}
-                  </motion.div>
-                ))}
-                {loading && (
-                  <p className="text-center text-gray-500 italic">
-                    Rio is typing...
-                  </p>
-                )}
-              </div>
+             <div
+  ref={chatRef}
+  className="flex-1 overflow-y-auto p-2 pb-16 space-y-2 text-sm 
+             scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 scroll-smooth"
+>
+  {messages.map((msg, i) => (
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 5 }}
+      animate={{ opacity: 1, y: 0 }}
+      className={`p-2 rounded-lg ${
+        msg.sender === "user"
+          ? "bg-black text-white ml-auto max-w-[80%]"
+          : "bg-gray-200 text-black mr-auto max-w-[80%]"
+      }`}
+    >
+      {msg.text}
+    </motion.div>
+  ))}
+
+  {loading && (
+    <p className="text-center text-gray-500 italic">Rio is typing...</p>
+  )}
+
+  {/* 👇 invisible spacer (forces full scroll to bottom) */}
+  <div className="h-6"></div>
+</div>
+
 
               {/* Fixed Input Bar */}
               <div className="absolute bottom-0 left-0 w-full border-t border-gray-300 bg-white p-2 flex items-center">
