@@ -76,8 +76,11 @@ export default function ChatBot() {
             exit={{ opacity: 0, y: 40 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="bg-white shadow-2xl rounded-2xl border border-gray-300 
-            w-[85vw] sm:w-80 max-w-[320px] 
-            overflow-hidden fixed bottom-6 right-3 sm:static"
+            w-[80vw] sm:w-80 max-w-[300px] 
+            h-[60vh] sm:h-auto 
+            overflow-hidden fixed bottom-5 right-3 
+            sm:bottom-6 sm:right-6 z-50"
+
 
           >
             {/* Header */}
