@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thepranavhub.online/sitemap.xml
