@@ -39,22 +39,28 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex justify-between items-center">
         
-        {/* LOGO + CLOCK */}
-        <div className="flex items-center gap-1">
-         <motion.img
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.9 }}
-  onClick={() => scrollToSection("home")}
-  src="/assets/pk-black.png"
-  alt="Pranav Logo"
-  className="cursor-pointer object-contain transition-all duration-300 
-    w-20 sm:w-24 md:w-[120px] h-auto 
-    ml-[-10px] sm:ml-0 md:ml-[-100px]
-    mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
-/>
+       {/* MOBILE + DESKTOP LEFT AREA */}
+<div className="flex items-center gap-1 relative w-full lg:w-auto">
 
-{/* MOBILE SUBTITLE → FIXES EMPTY NAVBAR */}
-  <p className="block lg:hidden text-[11px] text-gray-500 font-medium mt-[18px] ml-1">
+  {/* PK LOGO */}
+  <motion.img
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={() => scrollToSection("home")}
+    src="/assets/pk-black.png"
+    alt="Pranav Logo"
+    className="cursor-pointer object-contain transition-all duration-300 
+      w-20 sm:w-24 md:w-[120px] h-auto 
+      ml-[-10px] sm:ml-0 md:ml-[-100px]
+      mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
+  />
+
+  {/* ⭐ MOBILE TAGLINE CENTERED ⭐ */}
+  <p className="
+    lg:hidden
+    absolute left-1/2 -translate-x-1/2
+    text-[11px] text-gray-500 font-medium
+  ">
     Cybersecurity • AI
   </p>
 
