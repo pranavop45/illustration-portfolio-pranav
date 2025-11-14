@@ -37,7 +37,7 @@ export default function Navbar() {
         hasShadow ? "shadow-md" : "shadow-none"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex items-center justify-start lg:justify-between">
         
         {/* LOGO + CLOCK */}
         <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
