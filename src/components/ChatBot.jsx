@@ -94,24 +94,23 @@ export default function ChatBot() {
 >
 
 
+<div className="flex items-center justify-between bg-black text-white px-3 py-2 font-semibold border-b border-gray-700 shadow-sm">
+  <div className="flex items-center gap-2">
+    <img
+      src="/assets/chatbot.png"
+      alt="Rio"
+      className="w-6 h-6 rounded-full"
+    />
+    <span className="text-[13px] tracking-wide">Rio — Pranav’s AI Assistant</span>
+  </div>
+  <button
+    className="text-white hover:text-gray-400 transition text-sm"
+    onClick={() => setIsOpen(false)}
+  >
+    ✕
+  </button>
+</div>
 
-            {/* Header */}
-            <div className="flex items-center justify-between bg-black text-white p-3 font-bold">
-              <div className="flex items-center gap-2">
-                <img
-                  src="/assets/chatbot.png"
-                  alt="Rio"
-                  className="w-7 h-7 rounded-full"
-                />
-                <span>Rio — Pranav’s AI Assistant</span>
-              </div>
-              <button
-                className="text-white hover:text-gray-400 transition"
-                onClick={() => setIsOpen(false)}
-              >
-                ✖
-              </button>
-            </div>
 
           {/* 💬 Messages + Input */}
 <div className="relative flex flex-col h-full overflow-hidden">
