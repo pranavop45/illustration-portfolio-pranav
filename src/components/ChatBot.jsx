@@ -88,7 +88,7 @@ export default function ChatBot() {
   transition={{ duration: 0.3, ease: "easeInOut" }}
   className="bg-white shadow-xl rounded-2xl border border-gray-300
              w-[72vw] sm:w-[260px] max-w-[260px]
-             h-[48vh] sm:h-[360px]             /* ✅ mobile ke liye bada, desktop chhota */
+             h-[48vh] sm:h-[330px]             /* ✅ mobile ke liye bada, desktop chhota */
              overflow-hidden fixed bottom-4 right-3 sm:bottom-6 sm:right-6
              z-50 flex flex-col"
 >
