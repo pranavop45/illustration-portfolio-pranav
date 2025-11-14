@@ -18,7 +18,10 @@ export default function Clock() {
   }, []);
 
   return (
-    <div className="text-black font-medium tracking-wide text-xs sm:text-sm lg:text-base px-1.5 py-0.5">
+    <div className="text-black font-medium tracking-wide 
+text-xs sm:text-sm lg:text-base 
+px-1.5 py-0.5 
+ml-[-4px] sm:ml-0">
       {time}
     </div>
   );
