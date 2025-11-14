@@ -80,18 +80,19 @@ export default function ChatBot() {
       {/* 💬 Chat Window */}
       <AnimatePresence mode="wait">
         {isOpen && (
-         <motion.div
+<motion.div
   key="chat"
   initial={{ opacity: 0, y: 40 }}
   animate={{ opacity: 1, y: 0 }}
   exit={{ opacity: 0, y: 40 }}
   transition={{ duration: 0.3, ease: "easeInOut" }}
   className="bg-white shadow-xl rounded-2xl border border-gray-300 
-             w-[72vw] sm:w-80 max-w-[270px]
-             h-[400px] sm:h-[420px]        /* 🧠 Fixed height desktop */
+             w-[65vw] sm:w-[260px] max-w-[260px]     /* ✅ width reduced */
+             h-[340px] sm:h-[360px]                  /* ✅ height reduced */
              overflow-hidden fixed bottom-4 right-3 sm:bottom-6 sm:right-6
              z-50 flex flex-col"
 >
+
 
             {/* Header */}
             <div className="flex items-center justify-between bg-black text-white p-3 font-bold">
