@@ -61,7 +61,7 @@ export default function Navbar() {
     absolute left-1/2 -translate-x-1/2
     text-[11px] text-gray-500 font-medium
   ">
-    Cybersecurity • AI
+    Cybersecurity ~ AI
   </p>
 
           {/* CLOCK HERE */}
