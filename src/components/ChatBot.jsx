@@ -86,12 +86,13 @@ export default function ChatBot() {
   animate={{ opacity: 1, y: 0 }}
   exit={{ opacity: 0, y: 40 }}
   transition={{ duration: 0.3, ease: "easeInOut" }}
-  className="bg-white shadow-xl rounded-2xl border border-gray-300 
-             w-[65vw] sm:w-[260px] max-w-[260px]     /* ✅ width reduced */
-             h-[340px] sm:h-[360px]                  /* ✅ height reduced */
+  className="bg-white shadow-xl rounded-2xl border border-gray-300
+             w-[72vw] sm:w-[260px] max-w-[260px]
+             h-[48vh] sm:h-[360px]             /* ✅ mobile ke liye bada, desktop chhota */
              overflow-hidden fixed bottom-4 right-3 sm:bottom-6 sm:right-6
              z-50 flex flex-col"
 >
+
 
 
             {/* Header */}
