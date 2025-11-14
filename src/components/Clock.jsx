@@ -9,7 +9,7 @@ export default function Clock() {
       const formatted = now.toLocaleTimeString("en-US", {
         hour: "2-digit",
         minute: "2-digit",
-        second: "2-digit",
+        hour12: true, // 12-hour format
       });
       setTime(formatted);
     }, 1000);
@@ -18,7 +18,7 @@ export default function Clock() {
   }, []);
 
   return (
-    <div className="text-black font-semibold tracking-wide text-sm lg:text-base border border-black px-3 py-1 rounded-md bg-white shadow-sm">
+    <div className="text-black font-medium tracking-wide text-xs sm:text-sm lg:text-base px-1.5 py-0.5">
       {time}
     </div>
   );

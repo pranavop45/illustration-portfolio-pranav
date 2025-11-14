@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="container mx-auto flex justify-between items-center">
         
         {/* LOGO + CLOCK */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-1">
           <motion.img
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
