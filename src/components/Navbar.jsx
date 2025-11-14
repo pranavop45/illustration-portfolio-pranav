@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbDownload } from "react-icons/tb";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
+import Clock from "./Clock"; // 👈 NEW
 
 export default function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);
@@ -37,20 +38,25 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        {/* 👇 Logo */}
-   <motion.img
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-    onClick={() => scrollToSection("home")}
-    src="/assets/pk-black.png"
-    alt="Pranav Logo"
-     className="cursor-pointer object-contain transition-all duration-300 
-             w-20 sm:w-24 md:w-[120px] h-auto 
-             ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
-/>
+        
+        {/* LOGO + CLOCK */}
+        <div className="flex items-center gap-6">
+          <motion.img
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => scrollToSection("home")}
+            src="/assets/pk-black.png"
+            alt="Pranav Logo"
+            className="cursor-pointer object-contain transition-all duration-300 
+              w-20 sm:w-24 md:w-[120px] h-auto 
+              ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
+          />
 
+          {/* CLOCK HERE */}
+          <Clock />
+        </div>
 
-        {/* 👇 Desktop Nav Links */}
+        {/* DESKTOP NAV LINKS */}
         <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
           {["about", "skills", "projects", "contact"].map((section) => (
             <motion.li
@@ -69,7 +75,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* 👇 Resume Download Button */}
+        {/* RESUME BUTTON */}
         <motion.a
           href="/assets/cv.jpg"
           download="Pranav_Kadam_Resume.jpg"
@@ -82,7 +88,7 @@ export default function Navbar() {
           </span>
         </motion.a>
 
-        {/* 👇 Mobile Menu Toggle */}
+        {/* MOBILE MENU BUTTON */}
         <motion.button
           className="lg:hidden text-2xl"
           onClick={() => setIsOpen(!isOpen)}
@@ -92,7 +98,7 @@ export default function Navbar() {
         </motion.button>
       </div>
 
-      {/* 👇 Mobile Menu */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -108,6 +114,7 @@ export default function Navbar() {
             >
               <HiX />
             </button>
+
             <ul className="flex flex-col items-start ml-16 mt-28 h-full gap-y-6 font-semibold">
               {["about", "skills", "projects", "contact"].map((section) => (
                 <motion.li
@@ -120,6 +127,7 @@ export default function Navbar() {
                   </button>
                 </motion.li>
               ))}
+
               <motion.a
                 href="/assets/cv.jpg"
                 download="Pranav_Kadam_Resume.jpg"
