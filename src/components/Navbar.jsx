@@ -53,6 +53,11 @@ export default function Navbar() {
     mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
 />
 
+{/* MOBILE SUBTITLE → FIXES EMPTY NAVBAR */}
+  <p className="block lg:hidden text-[11px] text-gray-500 font-medium mt-[18px] ml-1">
+    Cybersecurity • AI
+  </p>
+
           {/* CLOCK HERE */}
           <div className="hidden lg:block">
   <Clock />
