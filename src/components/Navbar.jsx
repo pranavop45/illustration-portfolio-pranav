@@ -37,10 +37,10 @@ export default function Navbar() {
         hasShadow ? "shadow-md" : "shadow-none"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-start lg:justify-between">
+      <div className="container mx-auto flex justify-between items-center">
         
         {/* LOGO + CLOCK */}
-        <div className="flex items-center gap-2 sm:gap-4 lg:gap-6">
+        <div className="flex items-center gap-1">
           <motion.img
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -49,12 +49,14 @@ export default function Navbar() {
             alt="Pranav Logo"
             className="cursor-pointer object-contain transition-all duration-300 
               w-20 sm:w-24 md:w-[120px] h-auto 
-              ml-[-5px] sm:ml-0 md:ml-[-100px]
- mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
+              ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
           />
 
           {/* CLOCK HERE */}
-          <Clock />
+          <div className="hidden lg:block">
+  <Clock />
+</div>
+
         </div>
 
         {/* DESKTOP NAV LINKS */}
