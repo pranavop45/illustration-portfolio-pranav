@@ -39,25 +39,31 @@ export default function Navbar() {
     >
       <div className="container mx-auto flex justify-between items-center">
         
-        {/* LOGO + CLOCK */}
-        <div className="flex items-center gap-1">
-          <motion.img
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => scrollToSection("home")}
-            src="/assets/pk-black.png"
-            alt="Pranav Logo"
-            className="cursor-pointer object-contain transition-all duration-300 
-              w-20 sm:w-24 md:w-[120px] h-auto 
-              ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
-          />
+      {/* LOGO + CLOCK */}
+<div className="flex items-center gap-1">
 
-          {/* CLOCK HERE */}
-          <div className="hidden lg:block">
-  <Clock />
+  {/* PK LOGO */}
+  <motion.img
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={() => scrollToSection("home")}
+    src="/assets/pk-black.png"
+    alt="Pranav Logo"
+    className="cursor-pointer object-contain transition-all duration-300 
+      w-20 sm:w-24 md:w-[120px] h-auto 
+      ml-0 sm:ml-0 md:ml-[-100px] mt-[-5px] sm:mt-[-8px] md:mt-[-10px]"
+  />
+
+  {/* ⭐ MOBILE SEPARATOR LINE */}
+  <div className="block lg:hidden w-px h-6 bg-gray-300 mx-3"></div>
+
+  {/* CLOCK (desktop-only) */}
+  <div className="hidden lg:block">
+    <Clock />
+  </div>
+
 </div>
 
-        </div>
 
         {/* DESKTOP NAV LINKS */}
         <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
