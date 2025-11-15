@@ -1,3 +1,6 @@
+/* Made by Pranav */
+/* thepranavhub.online */
+
 import React, { useState, useEffect, useRef } from "react";
 import { askAI } from "../api/aiAssistant";
 import { motion, AnimatePresence } from "framer-motion";

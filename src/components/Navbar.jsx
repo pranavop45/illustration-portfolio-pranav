@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbDownload } from "react-icons/tb";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
-import Clock from "./Clock"; // 👈 NEW
+import Clock from "./Clock";
 
 export default function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);

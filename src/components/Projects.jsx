@@ -18,6 +18,14 @@ const projects = [
       "An advanced personal portfolio with an integrated AI Assistant, real-time APIs, and 3D UI animations — enabling dynamic interactions and smart responses.",
     images: ["/assets/portfolio-1.png", "/assets/portfolio-2.png"],
     link: "https://github.com/pranavop45/portfolio-ai-assistance"
+  },
+  {
+    id: 3,
+    title: "Snake & Ladders – Stylish UI Game",
+    description:
+      "A clean and modern Snake & Ladders browser game with a stylish UI, smooth animations, and responsive board design. Built using HTML, CSS, and JavaScript with a polished user experience.",
+    images: ["/assets/project-3-1.png", "/assets/project-3-2.png"],
+    link: "https://github.com/pranavop45/snakes-and-ladders-pranav-edition"
   }
 ];
 
